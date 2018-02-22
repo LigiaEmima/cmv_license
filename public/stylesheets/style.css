@@ -1,0 +1,121 @@
+
+.navbar {
+    margin-bottom: 0;
+    background-color: green;
+    letter-spacing: 6px;
+    padding-bottom: 0px;
+}
+
+.navbar li a, .navbar {
+    color: white !important;
+	font-family: 'Oranienbaum', serif;
+	font-size: 20px;
+	
+}
+.navbar-brand{
+	color: white !important;
+	font-family: 'Oranienbaum', serif;
+	font-size: 35px;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: green !important;
+    background-color: white !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+
+body {
+	position: relative;
+    
+	
+}
+
+#page1 {
+	background-color: white;
+	height: 600px;
+}
+
+.image {
+    background-repeat: no-repeat;
+    align-items: center;
+}
+
+.container2 h1{
+    font-family: 'Berkshire Swash', cursive;
+    color: black;
+    font-size: 50px;
+    margin-top: 150px;
+    text-align: center;
+}
+.container2 p{
+	font-family: 'Berkshire Swash', cursive;
+	color: black;
+	font-size: 25px;
+    margin-top: 30px;
+    text-align: center;
+}
+#page2 {
+	padding-top:30px;
+	height:500px; 
+	background-color: #56ef83;
+	
+}
+.text-center h2 {
+	font-family: 'Overlock', cursive, bold;
+	font-size: 35px;
+}
+.panel {
+    border: 1px solid black; 
+    border-radius:0;
+	box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+}
+
+.panel h1 {
+    font-size: 32px;
+	font-family: 'Overlock', cursive;
+}
+.panel p {
+	font-size:18px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+#page4 {
+	padding-top:30px;
+	height:500px; 
+}
+
+#page4 h2 {
+	font-family: 'Overlock', cursive, bold;
+	font-size: 35px;
+}
+#page4 h1 {
+	font-family: 'Overlock', cursive, bold;
+	font-size: 25px;
+	margin-left: 50px;
+}
+#page4 p {
+	font-family: 'Overlock', cursive, bold;
+	font-size: 25px;
+	margin-left: 100px;
+}
+
+#registru {
+	background-color: #d4f7de;
+	
+}
+
+#registru h1 {
+	font-size:35px;
+	font-family: 'Overlock', cursive, bold;
+	text-align: center;
+}
+
+#registru h2 {
+	font-family: 'Dosis', sans-serif;
+	margin-left: 30px;
+}
+
