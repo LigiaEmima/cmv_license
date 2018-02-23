@@ -1,0 +1,36 @@
+extends layout
+block content
+  div(class="container" id="Cool" ng-app="mainApp" ng-controller="formController")
+     h2= title
+     a(href="/animals") Animale 
+     &nbsp;&nbsp;|&nbsp;&nbsp;
+     a(href="/animals/add") Add Animal
+     div.response 
+     form(ng-submit="updateInfo()")
+        input(type='text', name='Nume', value='', placeholder='Nume' ng-model="Nume")
+        input(type='text', name='Proprietar', value='', placeholder='Proprietar' ng-model="Proprietar")
+        input(type='submit', value='{{btname}}' ng-bind="btname")
+  script(type="text/javascript").
+   var data=!{JSON.stringify(data)};
+   var mainApp = angular.module("mainApp", []);
+   if(data != ""){
+     mainApp.controller("formController", function($scope, $http) {
+       $scope.Nume = data[0].Nume;
+       $scope.Proprietar = data[0].Proprietar;
+       $scope.btname = "Update";
+       $scope.updateInfo = function(){
+          var request = $http.put('/animals/update/', {Nume: $scope.Nume, Proprietar: $scope.Proprietar, id: data[0].ID});
+          request.success(function (data) {
+           console.log(data);
+             if(data.status == 1){
+             $(".response").show('slow', function(){ $(this).addClass('alert alert-success').html(data.msg); });
+           }else{
+             $(".response").show('slow', function(){ $(this).addClass('alert alert-warning').html(data.msg); });
+           }
+          });
+          request.error(function(serverResponse, status, headers, config) {
+           alert("failure");
+        });
+       }
+     });
+   }
