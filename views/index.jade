@@ -1,16 +1,6 @@
 extends layout
 block content
-    div    
-        .navbar.navbar-default.navbar-fixed-top
-            .navbar-header
-              a(href='#').navbar-brand BioVet
-             div.collapse.navbar-collapse
-                ul.nav.navbar-nav.navbar-right
-                    li: a( href="#") Acasa
-                    li: a( href="#" ) Servicii
-                    li: a( href="#" ) Articole
-                    li: a( href="#" ) Registru
-                    li: a( href="#" ) Contact
+    
     div 
         #page1.container1
             br
@@ -33,6 +23,18 @@ block content
                         p Consultatii Dermatologie
                         p Consultatii Ortopedice
                         div
+            
+            .row.col-sm-4.panel.panel-default.text-center
+                div
+                    .panel-heading
+                        h1 Chirurgie
+                div
+                    .panel-body
+                        p Sterilizare
+                        p Cezariana
+                        p Anestezie clasica
+                        p Prolaps Uterin
+                        p Fracturi
             .row.col-sm-4.panel.panel-default.text-center
                 div
                     .panel-heading
@@ -42,15 +44,69 @@ block content
                         p Tratamente
                         p Vaccinari
                         p Perfuzii si transfuzii sange    
-            .row.col-sm-4.panel.panel-default.text-center
+    div
+        #page2.container2.text-center
+            .row.col-lg-6.panel2.panel-default.text-center
                 div
                     .panel-heading
-                        h1 Chirurgie
+                        h1 Farmacie veterinara
                 div
                     .panel-body
-                        p Sterilizare
-                        p Cezariana
-                        p Anestezie clasica    
-                    
+                        p Hrană și diete speciale
+                        p Suplimente
+                        p Unguente și șampoane medicamentoase
+            .row.col-lg-6.panel2.panel-default.text-center
+                div
+                    .panel-heading
+                        h1 Cosmetica canina
+                div
+                    .panel-body
+                        p Frizerie canină
+                        p Toaleta de întretinere
+                        p Descâlcire, periere și pieptănare
+    div
+        #page5.text-center
+            h2 Contact
+            div
+                .row.col-sm-5
+                    h1 Daca vrei sa fii salvat, uite numar de contact!
+                        span.glyphicon.glyphicon-map-marker     
+                            &nbsp Poienile de sub munte
+                        span.glyphicon.glyphicon-phone 
+                            &nbsp 0758075632
+                        span.glyphicon.glyphicon-envelope 
+                            &nbsp luci_an_toma@yahoo.com
+                .row.col-sm-6
+                    form(method="post", action="contact/send")
+                        .form-group
+                            label Nume
+                            input.form-control(type="text",name="name")
+                        .form-group
+                            label Email
+                            input.form-control(type="email", name='email')
+                        .form-group
+                            label Mesaj
+                            textarea.form-control(name="message")
+                        button.btn.btn-default(type='submit') Submit
+    div
+        footer.text-center
+            p Copyright - EmiEmima
+    script.
+        $(document).ready(function(){
+          $('a[href*=#]').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+            && location.hostname == this.hostname) {
+              var $target = $(this.hash);
+              $target = $target.length && $target
+              || $('[name=' + this.hash.slice(1) +']');
+              if ($target.length) {
+                var targetOffset = $target.offset().top;
+                $('html,body')
+                .animate({scrollTop: targetOffset}, 1500);
+               return false;
+              }
+            }
+          });
+        });
 
                     

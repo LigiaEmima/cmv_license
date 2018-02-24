@@ -29,9 +29,7 @@
 }
 
 body {
-	position: relative;
-    
-	
+	position: relative;	
 }
 
 #page1 {
@@ -60,7 +58,7 @@ body {
 }
 #page2 {
 	padding-top:30px;
-	height:500px; 
+	height:465px; 
 	background-color: palegreen;
 	
 }
@@ -78,8 +76,18 @@ body {
     border-radius:0;
 	box-shadow: 5px 0px 40px rgba(0,0,0, .2);
     width: 400px;
+    height: 300px;
 }
-
+.panel2 {
+    margin-top: 15px;
+    margin-left: 150px;
+    margin-right: 15px;
+    border: 1px solid black; 
+    border-radius:0;
+	box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+    width: 400px;
+    background-color: white;
+}
 .panel h1 {
     font-size: 32px;
 	font-family: 'Overlock', cursive;
@@ -88,27 +96,41 @@ body {
 	font-size:18px;
 	font-family: 'Source Sans Pro', sans-serif;
 }
-
-#page4 {
+.panel2 h1 {
+    font-size: 32px;
+	font-family: 'Overlock', cursive;
+}
+.panel2 p {
+    font-size:18px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+#page5 {
 	padding-top:30px;
 	height:500px; 
 }
 
-#page4 h2 {
+#page5 h2 {
 	font-family: 'Overlock', cursive, bold;
 	font-size: 35px;
+    margin-bottom: 30px;
 }
-#page4 h1 {
+#page5 h1 {
 	font-family: 'Overlock', cursive, bold;
 	font-size: 25px;
-	margin-left: 50px;
+	margin-left: 20px;
+    margin-right: 30px;
 }
-#page4 p {
+#page5 p {
 	font-family: 'Overlock', cursive, bold;
 	font-size: 25px;
 	margin-left: 100px;
 }
-
+#page5 label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
 #registru {
 	background-color: #d4f7de;
 	

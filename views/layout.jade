@@ -15,5 +15,17 @@ html
     link(href='https://fonts.googleapis.com/css?family=Berkshire+Swash' rel="stylesheet")
     link(href='https://fonts.googleapis.com/css?family=Overlock' rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet')
+    link(rel="stylesheet",href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css")
   body
+    div    
+        .navbar.navbar-default.navbar-fixed-top
+            .navbar-header
+              a(href='#page1').navbar-brand BioVet
+             div.collapse.navbar-collapse
+                ul.nav.navbar-nav.navbar-right
+                    li: a( href="/#page1") Acasa
+                    li: a( href="/#page2" ) Servicii
+                    li: a( href="#" ) Articole
+                    li: a( href="/animals" ) Registru
+                    li: a( href="/#page5" ) Contact
     block content
