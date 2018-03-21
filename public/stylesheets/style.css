@@ -104,6 +104,12 @@ body {
     font-size:18px;
 	font-family: 'Source Sans Pro', sans-serif;
 }
+#page4 {
+	padding-top:30px;
+	height:465px; 
+	background-color: palegreen;
+	
+}
 #page5 {
 	padding-top:30px;
 	height:500px; 
@@ -145,5 +151,9 @@ body {
 #registru h2 {
 	font-family: 'Dosis', sans-serif;
 	margin-left: 30px;
+}
+
+#updateAnimals{
+    margin-top: 100px;
 }
 

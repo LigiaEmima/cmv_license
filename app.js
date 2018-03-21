@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
+var registru = require('./routes/registru');
 var animals = require('./routes/animals');
 
 
@@ -46,6 +47,7 @@ app.use(function(req,res,next){
 });
 
 app.use('/', index);
+app.use('/registru', registru);
 app.use('/animals', animals);
 
 // catch 404 and forward to error handler
