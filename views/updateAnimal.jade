@@ -1,25 +1,46 @@
 extends layout
 block content
-  div(class="container" id="updateAnimals" ng-app="mainApp" ng-controller="formController")
-     h2= title
+  div(class="container" id="updateAnimal" ng-app="mainApp" ng-controller="formController")
+     h2 Actualizare animale
      a(href="/animals") Animale 
-     &nbsp;&nbsp;|&nbsp;&nbsp;
-     a(href="/animals/add") Add Animal
+     table.table
+      thead
+        tr
+          th ID
+          th Nume
+          th Specia
+          th Varsta
+          th Sex
+          th Numar de identificare
+          th Proprietar
+          th Action
      div.response 
-     form(ng-submit="updateInfo()")
-        input(type='text', name='Nume', value='', placeholder='Nume' ng-model="Nume")
-        input(type='text', name='Proprietar', value='', placeholder='Proprietar' ng-model="Proprietar")
+      form(ng-submit="updateInfo()")
+        input(type='text', name='ID', value='', ng-model="ID")
+        input(type='text', name='Nume', value='', ng-model="Nume")
+        input(type='text', name='Specia', value='', ng-model="Specia")
+        input(type='text', name='Varsta', value='', ng-model="Varsta")
+        input(type='text', name='Sex', value='', ng-model="Sex")
+        input(type='text', name='Numar_identificare', value='', ng-model="Numar_identificare")
+        input(type='text', name='Proprietar', value='', ng-model="Proprietar")
         input(type='submit', value='{{btname}}' ng-bind="btname")
+  
   script(type="text/javascript").
    var data=!{JSON.stringify(data)};
    var mainApp = angular.module("mainApp", []);
    if(data != ""){
      mainApp.controller("formController", function($scope, $http) {
+       $scope.ID = data[0].ID;
        $scope.Nume = data[0].Nume;
+       $scope.Specia = data[0].Specia;
+       $scope.Varsta = data[0].Varsta;
+       $scope.Sex = data[0].Sex;
+       $scope.Numar_identificare = data[0].Numar_identificare;
        $scope.Proprietar = data[0].Proprietar;
-       $scope.btname = "Update";
+       $scope.btname = "Actualizare";
+       
        $scope.updateInfo = function(){
-          var request = $http.put('/animals/update/', {Nume: $scope.Nume, Proprietar: $scope.Proprietar, id: data[0].ID});
+          var request = $http.put('/animals/update/', {id: data[0].ID, Nume: $scope.Nume, Specia: $scope.Specia, Varsta: $scope.Varsta, Sex: $scope.Sex, Numar_identificare: $scope.Numar_identificare, Proprietar: $scope.Proprietar});
           request.success(function (data) {
            console.log(data);
              if(data.status == 1){
@@ -34,3 +55,6 @@ block content
        }
      });
    }
+   
+   
+   

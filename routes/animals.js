@@ -31,13 +31,17 @@ router.put('/update', function(req, res, next) {
 	var db = req.con;
 	var data = {
 			Nume: req.body.Nume,
-			Proprietar: req.body.Proprietar
+			Proprietar: req.body.Proprietar,
+            Specia: req.body.Specia,
+            Varsta: req.body.Varsta,
+            Sex: req.body.Sex,
+            Numar_identificare: req.body.Numar_identificare
 		}
 	db.query('UPDATE animal set ? WHERE id = ?',[data, req.body.id] ,function(err,rows){
 		if(err){
 			res.send(JSON.stringify({'status': 0, 'msg': 'Error updating animal', 'raw': JSON.stringify(req.body)}));
 		}
-		res.send(JSON.stringify({'status': 1, 'msg': 'Animal updated', 'raw': JSON.stringify(req.body)}));
+		res.send(JSON.stringify({'status': 1, 'msg': 'Animal actualizat!', 'raw': JSON.stringify(req.body)}));
 	});
 });
 

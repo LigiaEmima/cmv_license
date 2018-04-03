@@ -3,24 +3,30 @@ block content
   div(class="container" id="Cool" ng-app="mainApp")
      h2#header("property"="pValue") Animals
      div
-        a(href="/") Inapoi
-     div
-        a(href="/users/add") Adauga Animale
-     h3 Response
+        a(href="/animals/addAnimal") Adauga Animale
+     h3 Animale
      table.table(ng-controller="TodoController")
       thead
         tr
-          th #
-          th Name
-          th Email
+          th ID
+          th Nume
+          th Specia
+          th Varsta
+          th Sex
+          th Numar de identificare
+          th Proprietar
           th Action
       tbody
         tr(ng-repeat="animal in animals" id="id-{{todo.id}}")
           th(scope='row') {{ animal.ID }}
           td {{ animal.Nume }}
+          td {{ animal.Specia }}
+          td {{ animal.Varsta }}
+          td {{ animal.Sex }}
+          td {{ animal.Numar_identificare }}
           td {{ animal.Proprietar }}
           td 
-            button(ng-click="deleteData(todo.id)") delete
+            button(ng-click="deleteData(todo.id)") Delete
             &nbsp;&nbsp;| &nbsp;&nbsp;
             a(href="/animals/update/{{animal.ID}}") Edit
 
@@ -30,7 +36,7 @@ block content
    mainApp.controller("TodoController", function($scope, $http) {
      $scope.animals = !{JSON.stringify(animals)};
      $scope.deleteData = function($id){
-        var request = $http.delete('/users/delete/'+$id);
+        var request = $http.delete('/animals/delete/'+$id);
         request.success(function (data) {
           console.log(data);
       	  if(data.status == 1){
