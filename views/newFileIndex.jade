@@ -1,0 +1,74 @@
+extends layout
+block content
+ div
+     #newFile.text-center
+        h2 Fisa noua
+        h4.col-md-6 Adauga animal
+        h4.col-md-6 Fisa consultatie
+           br 
+           br
+       div
+           div
+              row.col-md-6
+                   form.form-horizontal
+                       div.form-group
+                            label.col-md-1 Nume:
+                            div
+                            input(type='text')
+                       div.form-group
+                            label.col-md-1 Specia:
+                            div
+                            input(type='text')
+                       div.form-group
+                            label.col-md-1 Varsta:
+                            div
+                            input(type='text')
+                       div.form-group
+                            label.col-md-1 Sex:
+                            div
+                            input(type='text')
+                       div.form-group
+                            label.col-md-1 Numar de identificare:
+                            div
+                            input(type='text') 
+                       br
+                       div.form-group
+                            label.col-md-1 Proprietar:
+                            div
+                            input(type='text')
+                       br
+                       div.col-md-6.col-md-push-1
+                            input(type="submit", value="Adauga")
+            div
+                row.col-md-6
+                     form.form-horizontal
+                          div.form-group
+                                label.col-md-1 Data:
+                                div
+                                input(type='text')
+                          div.form-group
+                                label.col-md-1 Nume animal:
+                                div
+                                input(type='text')
+                          div.form-group
+                                label.col-md-1 Diagnostic:
+                                div
+                                textarea(name="description", cols="40", rows="3")
+                          div.form-group
+                                label.col-md-1 Tratament:
+                                div
+                                textarea(name="description", cols="40", rows="3")
+                         div.form-group
+                                label.col-md-2 Observatii:
+                                div
+                                textarea(name="description", cols="40", rows="3")
+                         div.form-group
+                                label.col-md-2 Data control:
+                                div
+                                input(type='text')
+                         div.col-md-6.col-md-push-1
+                                input(type="submit", value="Adauga")
+                
+
+
+
