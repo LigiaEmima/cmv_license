@@ -1,10 +1,18 @@
 extends layout
 block content
   div(class="container" id="Cool" ng-app="mainApp")
-     h2#header("property"="pValue") Animals
+     #animalsIndex
+        h2.text-center Animale
      div
         a(href="/animals/addAnimal") Adauga Animale
-     h3 Animale
+     br
+     div
+        form.form-horizontal
+        label Cauta dupa proprietar:
+            div.form-group
+                input(type='text')
+                &nbsp;&nbsp;
+                button.btn4(ng-click="(todo.id)") Cauta
      table.table(ng-controller="TodoController")
       thead
         tr
@@ -26,9 +34,12 @@ block content
           td {{ animal.Numar_identificare }}
           td {{ animal.Proprietar }}
           td 
-            button(ng-click="deleteData(todo.id)") Delete
+            button.btn4
+                a(href="/animals/update/{{animal.ID}}") Edit
             &nbsp;&nbsp;| &nbsp;&nbsp;
-            a(href="/animals/update/{{animal.ID}}") Edit
+            button.btn4(ng-click="deleteData(todo.id)") Delete
+            
+           
 
   script(type="text/javascript").
    var data=!{JSON.stringify(animals)};

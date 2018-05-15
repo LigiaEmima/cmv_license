@@ -1,8 +1,12 @@
 extends layout
 block content
   div(class="container" id="updateAnimal" ng-app="mainApp" ng-controller="formController")
-     h2 Actualizare animale
+     #updateAnimal
+        h2.text-center Actualizare animale
+     div
+     br
      a(href="/animals") Animale 
+     br
      table.table
       thead
         tr

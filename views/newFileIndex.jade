@@ -9,12 +9,13 @@ block content
            br
        div
            div
-              row.col-md-6
+              #newFile
+                row.col-md-6
                    form.form-horizontal
                        div.form-group
                             label.col-md-1 Nume:
                             div
-                            input(type='text')
+                            input(type='text', value='', ng-model='')
                        div.form-group
                             label.col-md-1 Specia:
                             div
@@ -38,9 +39,10 @@ block content
                             input(type='text')
                        br
                        div.col-md-6.col-md-push-1
-                            input(type="submit", value="Adauga")
+                            button.btn4(ng-click="(todo.id)") Adauga
             div
-                row.col-md-6
+                #newFile
+                    row.col-md-6
                      form.form-horizontal
                           div.form-group
                                 label.col-md-1 Data:
@@ -58,16 +60,16 @@ block content
                                 label.col-md-1 Tratament:
                                 div
                                 textarea(name="description", cols="40", rows="3")
-                         div.form-group
-                                label.col-md-2 Observatii:
+                          div.form-group
+                                label.col-md-1 Observatii:
                                 div
                                 textarea(name="description", cols="40", rows="3")
-                         div.form-group
+                          div.form-group
                                 label.col-md-2 Data control:
                                 div
                                 input(type='text')
-                         div.col-md-6.col-md-push-1
-                                input(type="submit", value="Adauga")
+                          div.col-md-6.col-md-push-1
+                                button.btn4(ng-click="(todo.id)") Adauga
                 
 
 

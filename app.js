@@ -7,7 +7,9 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var registru = require('./routes/registru');
+var newFile = require('./routes/newFile');
 var animals = require('./routes/animals');
+
 
 
 // DataBase 
@@ -48,6 +50,7 @@ app.use(function(req,res,next){
 
 app.use('/', index);
 app.use('/registru', registru);
+app.use('/newFile', newFile);
 app.use('/animals', animals);
 
 // catch 404 and forward to error handler
