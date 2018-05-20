@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var registru = require('./routes/registru');
 var newFile = require('./routes/newFile');
 var animals = require('./routes/animals');
+var articole = require('./routes/articole');
 
 
 
@@ -52,6 +53,7 @@ app.use('/', index);
 app.use('/registru', registru);
 app.use('/newFile', newFile);
 app.use('/animals', animals);
+app.use('/articole', articole);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
