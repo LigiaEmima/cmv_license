@@ -4,16 +4,41 @@ block content
     div 
         #page1.container1
             br
-            h1 Cabinet medical veterinar 
+            h1 Cabinet medical veterinar
+        br
+        br
+    div(id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="null")
+        ol(class="carousel-indicators")
+          li(data-target="#myCarousel" data-slide-to="0" class="active")
+          li(data-target="#myCarousel" data-slide-to="1")
+          li(data-target="#myCarousel" data-slide-to="2")
+          li(data-target="#myCarousel" data-slide-to="3")
+        div(class="carousel-inner" role="listbox")
+            div(class="item active")
+                img(src='images/dogs.jpg' alt="Image Title")
+            div(class="item")
+                img(src='images/cat.jpg' alt="Image Title")
+            div(class="item")
+                img(src='images/blackdog.jpg' alt="Image Title" )
+            div(class="item")
+                img(src='images/animals.jpg' alt="Image Title" )
             div
-                img.center-block.image(src='images/dogs.jpg' alt="Image Title")
-            p Oferim servicii non-stop!        
+                a(class="left carousel-control" href="#myCarousel" role="button")
+                     span(class="glyphicon glyphicon-chevron-left" aria-hidden="true")
+                     span(class="sr-only") Previous
+                a(class="right carousel-control" href="#myCarousel" role="button")
+                     span(class="glyphicon glyphicon-chevron-right" aria-hidden="true")
+                     span(class="sr-only") Next
+        br
+        br   
+    div.container1   
+       p Oferim servicii non-stop!        
         
     div
         #page2.container2.text-center
             h2 Servicii
             div
-            .row.col-sm-4.panel.panel-default.text-center
+            .row.col-sm-4.panel.panel-default.text-center.w3-animate-zoom
                 div
                     .panel-heading
                         h1 Consultatii
@@ -24,7 +49,7 @@ block content
                         p Consultatii Ortopedice
                         div
             
-            .row.col-sm-4.panel.panel-default.text-center
+            .row.col-sm-4.panel.panel-default.text-center.w3-animate-opacity
                 div
                     .panel-heading
                         h1 Chirurgie
@@ -35,7 +60,7 @@ block content
                         p Anestezie clasica
                         p Prolaps Uterin
                         p Fracturi
-            .row.col-sm-4.panel.panel-default.text-center
+            .row.col-sm-4.panel.panel-default.text-center.w3-animate-zoom
                 div
                     .panel-heading
                         h1 Medicina interna
@@ -46,7 +71,7 @@ block content
                         p Perfuzii si transfuzii sange    
     div
         #page2.container2.text-center
-            .row.col-lg-6.panel2.panel-default.text-center
+            .row.col-lg-6.panel2.panel-default.text-center.w3-animate-bottom
                 div
                     .panel-heading
                         h1 Farmacie veterinara
@@ -55,7 +80,7 @@ block content
                         p Hrană și diete speciale
                         p Suplimente
                         p Unguente și șampoane medicamentoase
-            .row.col-lg-6.panel2.panel-default.text-center
+            .row.col-lg-6.panel2.panel-default.text-center.w3-animate-bottom
                 div
                     .panel-heading
                         h1 Cosmetica canina
@@ -64,6 +89,26 @@ block content
                         p Frizerie canină
                         p Toaleta de întretinere
                         p Descâlcire, periere și pieptănare
+    div
+        #page2b.text-center
+            h2 Ehipa medicala
+            br
+            p Colectivul nostru este format din profesionisti cu experienta in ingrijirea si tratarea animalelor, ce se perfectioneaza si invata continuu si care sunt dedicati in a va oferi sfaturi si ajutor medical veterinar cu maxima eficienta, pasiune si intelegere.
+            br
+            br
+            .panel3.text-center.w3-animate-opacity
+                div
+                    .panel-heading
+                        h3 Medici
+                div
+                    .panel-body
+                        h1 Dr. Tudic Dumitru
+                        h1 Dr. Toma Ioan-Lucian
+                        h1 Dr. Novac Manel
+                        h1 Dr. Miculaiciuc Andrei
+                        br
+                        h1 Tehnician veterinar Miculaicuc Simion
+                       
     div
         #page5.text-center
             h2 Contact
@@ -77,6 +122,13 @@ block content
                         span.glyphicon.glyphicon-phone  0758075632
                             br
                         span.glyphicon.glyphicon-envelope  luci_an_toma@yahoo.com
+                    br
+                    div
+                        .panel4.text-center.w3-animate-zoom
+                            h2 Program
+                            p  Luni - Vineri 8 - 18
+                            p  Sambata - Duminica -
+                            p  Urgente - non-stop! 
                 .row.col-md-6
                     form(method="post", action="contact/send")
                         .form-group
@@ -89,6 +141,7 @@ block content
                             label Mesaj
                             textarea.form-control(name="message")
                         button.btn5(type='submit') Trimite
+    div(id="map" style="width:100%;height:500px")
     div
         footer.text-center
             p Copyright - EmiEmima
@@ -103,11 +156,53 @@ block content
               if ($target.length) {
                 var targetOffset = $target.offset().top;
                 $('html,body')
-                .animate({scrollTop: targetOffset}, 1500);
+                .animate({scrollTop: targetOffset}, 1000);
                return false;
               }
             }
           });
-        });
+          });
+    script.
+        {
+             $(document).ready(function(){
+            // Activate Carousel
+            $("#myCarousel").carousel();
+
+            // Enable Carousel Indicators
+            $(".item1").click(function(){
+                $("#myCarousel").carousel(0);
+            });
+            $(".item2").click(function(){
+                $("#myCarousel").carousel(1);
+            });
+             $(".item3").click(function(){
+                $("#myCarousel").carousel(2);
+            });
+            $(".item4").click(function(){
+                $("#myCarousel").carousel(3);
+            });
+        // Enable Carousel Controls
+            $(".left").click(function(){
+                $("#myCarousel").carousel("prev");
+            });
+            $(".right").click(function(){
+                $("#myCarousel").carousel("next");
+            });
+            $('#carousel-example-generic').carousel({
+              interval: 3000,
+              pause: null
+              })
+        }
+    script. 
+        function myMap() 
+            {
+                var mapCanvas = document.getElementById("map");
+                var mapOptions = {
+                    center: new google.maps.LatLng(51.5, -0.2),
+                    zoom: 10
+            };
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+            }
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap")
 
                     
